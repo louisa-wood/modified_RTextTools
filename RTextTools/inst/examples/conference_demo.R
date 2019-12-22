@@ -12,16 +12,13 @@ container <- create_container(matrix,NYTimes$Topic.Code,trainSize=1:2500, testSi
 
 # TRAINING
 svm_model <- train_model(container,"SVM")
-maxent_model <- train_model(container,"MAXENT")
 
 
 # PREDICTION
 svm_results <- classify_model(container,svm_model)
-maxent_results <- classify_model(container,maxent_model)
 
 
 # ANALYTICS
-analytics <- create_analytics(container,cbind(svm_results,maxent_results))
 
 analytics@label_summary
 analytics@algorithm_summary

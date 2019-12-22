@@ -87,16 +87,7 @@ function(container, model, s=0.01, ...) {
         colnames(results_table)[1] <- "NNETWORK_LABEL"
         colnames(results_table)[2] <- "NNETWORK_PROB"
     } else
-							   
-	if (pmatch("maxent",class(model),nomatch=0) > 0) {
-		maxent_results <- predict(model,container@classification_matrix,...)
-		maxent_pred <- maxent_results[,1]
-		maxent_prob <- apply(maxent_results[,-1],1,extract_maximum_prob)
 		
-		results_table <- data.frame(as.character(maxent_pred),as.vector(maxent_prob,mode="numeric"))
-		colnames(results_table)[1] <- "MAXENTROPY_LABEL"
-		colnames(results_table)[2] <- "MAXENTROPY_PROB"
-	}
 	
 	return(results_table)
 }

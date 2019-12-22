@@ -1,4 +1,4 @@
-train_model <- function(container, algorithm=c("SVM","SLDA","BOOSTING","BAGGING","RF","GLMNET","TREE","NNET","MAXENT"), ...) {
+train_model <- function(container, algorithm=c("SVM","SLDA","BOOSTING","BAGGING","RF","GLMNET","TREE","NNET"), ...) {
         
         # CLEAN UP FROM PREVIOUS MODEL TRAINED
         gc()
@@ -21,9 +21,7 @@ train_model <- function(container, algorithm=c("SVM","SLDA","BOOSTING","BAGGING"
             model <- tree(container.training_codes ~ ., data=data.frame(as.matrix(container@training_matrix),container@training_codes), ...)
         } else if (algorithm=="NNET") {
             model <- nnet(container.training_codes ~ ., data=data.frame(as.matrix(container@training_matrix),container@training_codes), ...)
-        } else if (algorithm=="MAXENT") {
-			model <- maxent(container@training_matrix,as.vector(container@training_codes), ...)
-		} else {
+        } else {
 			stop("ERROR: Invalid algorithm specified. Type print_algorithms() for a list of available algorithms.")
 		}
 		

@@ -43,8 +43,6 @@ matrix <- create_matrix(cbind(data["Title"],data["Subject"]), language="english"
 removeNumbers=TRUE, stemWords=FALSE, weighting=weightTfIdf)
 container <- create_container(matrix,data$Topic.Code,trainSize=1:75, testSize=76:100, 
 virgin=FALSE)
-maxent_model <- train_model(container,"MAXENT")
-maxent_results <- classify_model(container,maxent_model)
 }
 
 \keyword{method}

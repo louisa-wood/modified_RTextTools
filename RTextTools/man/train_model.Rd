@@ -9,7 +9,7 @@ Creates a trained model using the specified algorithm.
 }
 \usage{
 train_model(container, algorithm=c("SVM","SLDA","BOOSTING","BAGGING",
-"RF","GLMNET","TREE","NNET","MAXENT"), method = "C-classification", 
+"RF","GLMNET","TREE","NNET"), method = "C-classification", 
 cross = 0, cost = 100, kernel = "radial", maxitboost = 100, 
 maxitglm = 10^5, size = 1, maxitnnet = 1000, MaxNWts = 10000, 
 rang = 0.1, decay = 5e-04, trace=FALSE, ntree = 200, 
@@ -101,7 +101,6 @@ matrix <- create_matrix(cbind(data["Title"],data["Subject"]), language="english"
 removeNumbers=TRUE, stemWords=FALSE, weighting=weightTfIdf)
 container <- create_container(matrix,data$Topic.Code,trainSize=1:75, testSize=76:100, 
 virgin=FALSE)
-maxent_model <- train_model(container,"MAXENT")
 svm_model <- train_model(container,"SVM")
 }
 \keyword{method}

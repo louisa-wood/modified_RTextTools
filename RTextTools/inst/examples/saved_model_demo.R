@@ -24,7 +24,7 @@ container <- create_container(matrix,NYTimes$Topic.Code,trainSize=1:3000,virgin=
 
 # THERE ARE TWO METHODS OF TRAINING AND CLASSIFYING DATA.
 # ONE WAY IS TO DO THEM AS A BATCH (SEVERAL ALGORITHMS AT ONCE)
-models <- train_models(container, algorithms=c("SVM","MAXENT"))
+models <- train_models(container, algorithms=c("SVM"))
 
 # NOW SAVE THE ORIGINAL TERM-DOCUMENT MATRIX AND THE TRAINED MODELS
 save(matrix,file="originalMatrix.Rd")

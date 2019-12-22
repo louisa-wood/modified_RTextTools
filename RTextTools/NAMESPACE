@@ -7,7 +7,6 @@ import(nnet)
 import(tm)
 import(e1071)
 import(ipred)
-import(maxent)
 import(glmnet)
 import(tau)
 
